@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print">
+
+    <title>Lucas Vieira's Page</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Lucas Vieira's Page</h1>
+        <h2></h2>
+
+        <section id="downloads">
+          <a href="http://lucasvmiguel.github.io/blog/" class="btn">About</a>
+          <a href="http://lucasvmiguel.github.io/blog/posts" class="btn">Posts</a>
+          <a href="https://github.com/lucasvmiguel" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events in Node.js</h3>
+
+<p>In this first post I'll talk quickly about events in Node.js. First of all, I'll explain what is events in any programming language.</p>
+<p>A event is a signal, someone emit a signal and someone listen this signal(could be more than one listener). In Node.js, the signal is able to pass some parameters and who are listen can treat this parameters as you wish.</p>
+
+<p>Pay attention to comments...</p>
+
+<pre>
+  <code>
+  //add the event module to the application
+  var events = require('events');
+  //this object do the hard work
+  var eventEmitter = new events.EventEmitter();
+
+  //The method that listen('on') - receive a string(event name) and a function(receive the event parameter)
+  eventEmitter.on('eventDispatch', function(variable){
+    console.log('Receive the event with parameter: ' + variable);
+  });
+
+  //This method emit the event with a string(event name) and anything(event parameter)
+  eventEmitter.emit('eventDispatch', 'Lucas');
+  </code>
+</pre>
+
+<p>It's important to realize that you need listen the event before being fired!</p>
+
+<p>For more info:
+<a href="https://nodejs.org/api/events.html">https://nodejs.org/api/events.html</a></p>
+      </section>
+    </div>
+
+
+  </body>
+</html>
